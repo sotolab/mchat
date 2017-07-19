@@ -1,0 +1,33 @@
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Chat application UCLL</title>
+</head>
+
+<body>
+  <h1> Message </h1>
+  <div class="container">
+    {{> newMessage}}
+    {{> messages}}
+  </div>
+</body>
+
+<template name="messages">
+  <!-- Put the messages template here -->
+  {{#each messages}}
+  <div class="message">
+    <span>{{this.message}}</span>   [  <time>{{time this.time}}</time> ]
+    <p>
+      
+    </p>
+    <div class="clearfix"></div>
+  </div>
+{{/each}}
+</template>
+
+<template name="newMessage">
+  <form name="message">
+    <input type="text" name="message" placeholder="Compose a new message..." autocomplete="off" />
+    <button type="submit">Send</button>
+  </form>
+</template>
+
